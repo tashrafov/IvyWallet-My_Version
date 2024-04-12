@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml:2:1-13
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml:2:1-13
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml:2:1-13
+	package
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+		ADDED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml:2:1-13
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml:2:1-13
+uses-sdk
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+		ADDED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+		ADDED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
+		INJECTED from /Users/taghiashrafov/AndroidStudioProjects/IvyWallet-My_Version/exchange-rates/src/main/AndroidManifest.xml
