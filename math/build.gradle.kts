@@ -16,6 +16,7 @@ dependencies {
     Hilt()
     implementation(project(":common:main"))
     implementation(project(":parser"))
+    JUnit5()
 }
 android {
     namespace = "com.ivy.math"
