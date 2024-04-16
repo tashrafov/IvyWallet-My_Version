@@ -1,2 +1,4 @@
 /build
+.gradle
+.idea
 /lint-merged-report.html
