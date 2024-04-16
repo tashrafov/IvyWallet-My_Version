@@ -2,20 +2,15 @@ package com.ivy.core.domain.action.transaction
 
 import android.graphics.Color
 import androidx.sqlite.db.SimpleSQLiteQuery
-import androidx.sqlite.db.SupportSQLiteQuery
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import com.ivy.core.domain.algorithm.accountcache.InvalidateAccCacheAct
 import com.ivy.data.Sync
 import com.ivy.data.SyncState
 import com.ivy.data.Value
-import com.ivy.data.account.Account
-import com.ivy.data.account.AccountState
 import com.ivy.data.tag.Tag
-import com.ivy.data.tag.TagState
 import com.ivy.data.transaction.Transaction
 import com.ivy.data.transaction.TransactionType
-import com.ivy.data.transaction.TrnMetadata
 import com.ivy.data.transaction.TrnState
 import com.ivy.data.transaction.TrnTime
 import io.mockk.InternalPlatformDsl.toStr
@@ -52,64 +47,29 @@ class WriteTrnsActTest {
 
     @Test
     fun `Save transaction, check if saved successfully`() = runTest {
-        val tags = listOf<Tag>(
-            Tag(
-                id = "tag1",
-                name = "Test Tag 1",
-                color = Color.RED,
-                orderNum = 1.0,
-                state = TagState.Default,
-                sync = Sync(SyncState.Synced, LocalDateTime.now())
-            ),
-            Tag(
-                id = "tag2",
-                name = "Test Tag 2",
-                color = Color.GREEN,
-                orderNum = 2.0,
-                state = TagState.Default,
-                sync = Sync(SyncState.Synced, LocalDateTime.now())
-            ),
+        val account = account()
+
+        val tags = listOf(
+            tag().copy(id = "tag1", name = "Tag name 1", color = Color.RED),
+            tag().copy(id = "tag2", name = "Tag name 2", color = Color.RED),
         )
 
-        val metadata = TrnMetadata(
-            recurringRuleId = UUID.randomUUID(),
-            loanId = UUID.randomUUID(),
-            loanRecordId = null
-        )
+        val metadata = metadata()
 
 
-        val transaction = Transaction(
-            id = UUID.randomUUID(),
-            account = Account(
-                id = UUID.randomUUID(),
-                name = "Test Account",
-                currency = "USD",
-                color = Color.BLUE,
-                icon = null,
-                excluded = false,
-                folderId = null,
-                orderNum = 0.0,
-                state = AccountState.Default,
-                sync = Sync(SyncState.Synced, LocalDateTime.now())
-            ),
-            type = TransactionType.Expense,
-            value = Value(100.0, "USD"),
-            category = null,
-            time = TrnTime.Actual(timeProvider.timeNow()),
-            title = "Test Transaction",
-            description = "Test Description",
-            state = TrnState.Default,
-            purpose = null,
+        val transaction =transaction(
+            account = account,
             tags = tags,
-            attachments = emptyList(),
-            sync = Sync(SyncState.Synced, LocalDateTime.now()),
-            metadata = metadata
+            metadata = metadata,
+            time = TrnTime.Actual(LocalDateTime.now())
         )
         writeTrnsAct.invoke(WriteTrnsAct.Input.CreateNew(trn = transaction))
 
-        val savedTransaction = transactionDao.findBySQL( SimpleSQLiteQuery(
-            "SELECT * FROM transactions"
-        )).first()
+        val savedTransaction = transactionDao.findBySQL(
+            SimpleSQLiteQuery(
+                "SELECT * FROM transactions"
+            )
+        ).first()
 
         assertThat(savedTransaction.id).isEqualTo(transaction.id.toStr())
 
