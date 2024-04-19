@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/domain/Ivy_Wallet.core.domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/domain/Ivy_Wallet.core.domain.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/math/Ivy_Wallet.math.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/math/Ivy_Wallet.math.unitTest.iml" />
+    </modules>
+  </component>
+</project>
